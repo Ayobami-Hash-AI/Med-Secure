@@ -85,6 +85,15 @@ I reached Assign Memory in the New Virtual Machine Wizard. The screen shows 4096
 
 The published image is a privacy-edited copy with the host label masked and output dimensions changed by the image editor. The visible 4096 MB value and checked Dynamic Memory were compared with the supplied original. It is stored in lossless WebP format.
 
+## Checkpoint 13 — Virtual disk selection
+I reached Connect Virtual Hard Disk. The selected option creates a dynamically expanding VHDX named CORP-WS01.vhdx in Hyper-V's default virtual-disk folder. The screenshot shows the default maximum capacity of 127 GB; this is a wizard value, not a completed disk. I distinguished the VHDX (the guest's persistent operating-system and data storage) from the Ubuntu ISO (installation media attached to the virtual DVD drive).
+
+The next instruction is to set the disk maximum to 40 GB, then attach the downloaded Ubuntu ISO under Installation Options. The 40 GB value and ISO attachment remain pending verification.
+
+![P2-13: CORP-WS01 virtual disk wizard with default capacity before adjustment](../evidence/phase-02/03-management-workstation/13-corp-workstation-virtual-disk-selection.png)
+
+Privacy review: this screenshot contains a lab VM filename and a generic Windows system folder, with no visible personal account, secret or sensitive identifier. No redaction was needed.
+
 ## Remaining validation
 - Establish a controlled management path; verify client DHCP, DNS and approved egress.
 - Test allowed and denied inter-zone flows; export a configuration backup and validate recovery.
