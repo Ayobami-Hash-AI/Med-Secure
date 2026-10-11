@@ -1,6 +1,8 @@
 # Phase 2 — Network Segmentation
 
-**Status:** All five interface assignments are applied and verified at the console. SOC/OPT1 IPv4 configuration is saved at 10.10.20.1/24; CLINICAL/OPT2 is saved at 10.10.30.1/24; ATTACK/OPT3 is saved at 10.10.40.1/24. Addressing is complete; management access and segmentation tests remain pending.
+**Status:** All five interface assignments are applied and verified at the console. SOC/OPT1 IPv4 configuration is saved at 10.10.20.1/24; CLINICAL/OPT2 is saved at 10.10.30.1/24; ATTACK/OPT3 is saved at 10.10.40.1/24. Addressing is complete. Ubuntu Desktop 24.04.5 LTS is installed on **MED-UBUNTU-01** (formerly CORP-WS01), with ISO detachment, login and desktop verified. Guest networking, management access and segmentation tests remain pending.
+
+**Naming note:** Checkpoints 11–17 retain CORP-WS01 and CORP-WS01.vhdx as shown in the original setup screenshots. The current Hyper-V VM name is MED-UBUNTU-01; a VHDX filename change and Linux guest hostname change have not been verified. Pending statements in those checkpoints describe their historical stage; see Checkpoint 18 for the current state.
 
 ## Checkpoint 1 — Baseline review
 The supplied Hyper-V view shows FW01 off and a checkpoint named `FW01 - pfSense 2.8.1 Clean Install`. This confirms a checkpoint entry exists, not that restore has been tested. The next console screenshot shows pfSense CE 2.8.1 completing startup, WAN hn0 receiving 172.28.254.188/20 by DHCP, and CORP/LAN hn4 retaining 10.10.10.1/24. ISO removal was instructed but is not directly proved by these screenshots.
@@ -73,7 +75,7 @@ I returned to the console menu and verified all five mappings and their current 
 ![P2-11: Consolidated five-interface IPv4 verification](../evidence/phase-02/02-interface-addressing/11-all-zone-interface-address-verification.png)
 
 ## Next procedure — CORP management access
-Create CORP-WS01 using the downloaded Ubuntu Desktop 24.04 LTS AMD64 ISO. Attach the management client to MED-CORP-SW, then validate its address and access to https://10.10.10.1/. Internal switches remain Private, so direct host access is not assumed. No client VM, browser access or policy enforcement is verified by the firewall console.
+The management client is now installed as **MED-UBUNTU-01** on MED-CORP-SW. Verify its Linux guest hostname, IP address and route, then test the CORP gateway and https://10.10.10.1/. Internal switches remain Private; browser access and policy enforcement remain unverified.
 
 ## Checkpoint 11 — Management operating system selected (2026-10-11)
 I selected Ubuntu Desktop 24.04 LTS as the free operating system for CORP-WS01, replacing the Windows management-client plan. I confirmed the ISO download in conversation. The exact ISO filename, checksum, VM creation, installation and browser access have not yet been verified. The architecture map and asset plan reflect this selection; no download screenshot was supplied.
@@ -128,12 +130,18 @@ Privacy review: host label and unrelated background are masked. The image editor
 
 Next: close disk properties and Settings, connect to CORP-WS01, start the VM and select Try or Install Ubuntu at the boot menu.
 
+## Checkpoint 18 — Ubuntu installed, VM renamed and desktop verified (2026-10-11)
+
+I completed Ubuntu Desktop 24.04.5 LTS installation, set the virtual DVD Drive to None, renamed the Hyper-V VM **MED-UBUNTU-01**, and verified the login screen and Ubuntu desktop. The endpoint has 4096 MB RAM, 2 vCPU and a 40 GB dynamically expanding VHDX on MED-CORP-SW. The VM display name is verified; the guest hostname and network configuration remain to be checked.
+
+See the [Ubuntu deployment journal and nine screenshots P2-18–P2-26](10-ubuntu-endpoint-deployment.md#published-screenshot-evidence). Earlier setup screenshots retain the original CORP-WS01 name and disk filename as historical evidence.
+
 ## Remaining validation
 - Establish a controlled management path; verify client DHCP, DNS and approved egress.
 - Test allowed and denied inter-zone flows; export a configuration backup and validate recovery.
 
 ## Publication and privacy
-The first eleven screenshots document firewall addressing; P2-12 through P2-17 document management-workstation wizard selections. All seventeen screenshots have been reviewed for privacy. The first three have host labels and the Netgate device identifier masked; P2-04 through P2-11 contain no visible personal information or sensitive identifiers and required no redaction. Deliberately assigned lab MACs and private lab addressing remain for reproducibility. Each screenshot appears once in this journal; other documentation links here rather than duplicating images.
+The first eleven screenshots document firewall addressing; P2-12 through P2-17 document management-workstation wizard selections. These seventeen screenshots have been reviewed for privacy. Nine additional Ubuntu installation and boot screenshots are published in the linked Ubuntu deployment journal, bringing Phase 2 to 26 screenshots. The first three have host labels and the Netgate device identifier masked; P2-04 through P2-11 contain no visible personal information or sensitive identifiers and required no redaction. Deliberately assigned lab MACs and private lab addressing remain for reproducibility. Each screenshot appears once in this journal; other documentation links here rather than duplicating images.
 
 ## Project documentation summary
-I reviewed my clean-install checkpoint, verified pfSense startup and the existing WAN/CORP addressing, and correlated all five guest interfaces with the static lab MAC plan. I declined VLAN setup because the planned zones use separate virtual adapters. I entered the five interface names and reviewed the proposed summary against the zone plan. I subsequently verified all five applied assignments at the console, with WAN and CORP addressing preserved. I configured and saved SOC/OPT1 at 10.10.20.1/24 with DHCP disabled and HTTPS retained. I also saved CLINICAL/OPT2 at 10.10.30.1/24 with DHCP disabled and HTTPS retained. I verified the ATTACK/OPT3 save confirmation at 10.10.40.1/24, completing the internal address plan. Management access and segmentation enforcement remain untested.
+I reviewed my clean-install checkpoint, verified pfSense startup and the existing WAN/CORP addressing, and correlated all five guest interfaces with the static lab MAC plan. I declined VLAN setup because the planned zones use separate virtual adapters. I entered the five interface names and reviewed the proposed summary against the zone plan. I subsequently verified all five applied assignments at the console, with WAN and CORP addressing preserved. I configured and saved SOC/OPT1 at 10.10.20.1/24 with DHCP disabled and HTTPS retained. I also saved CLINICAL/OPT2 at 10.10.30.1/24 with DHCP disabled and HTTPS retained. I verified the ATTACK/OPT3 save confirmation at 10.10.40.1/24, completing the internal address plan. I also installed Ubuntu Desktop 24.04.5 LTS, renamed the Hyper-V management VM MED-UBUNTU-01, detached its installer ISO and verified login and desktop boot. Guest hostname/network checks, management access and segmentation enforcement remain untested.

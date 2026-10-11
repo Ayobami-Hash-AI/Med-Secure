@@ -1,7 +1,7 @@
 # MedSecure — Segmented Enterprise & Healthcare SOC Home Lab
 
 **Platform:** Microsoft Hyper-V · pfSense CE 2.8.1 · Ubuntu 24.04.5 LTS management workstation · planned Windows infrastructure · SOC tooling  
-**Progress:** Phase 1 firewall installation verified; Phase 2 network segmentation in progress: all five interface assignments verified; all internal gateway addresses verified; management access and policy validation pending.
+**Progress:** Phase 1 firewall installation verified; Phase 2 network segmentation in progress: all five interface assignments verified; all internal gateway addresses verified; MED-UBUNTU-01 installation and desktop boot verified; management access and policy validation pending.
 
 ## Mission
 Build a realistic, isolated enterprise and simulated clinical security environment to demonstrate network architecture, segmentation, identity management, endpoint monitoring, SIEM analysis, detection engineering, incident response, vulnerability management and recovery. No real patient data or production assets are used.
@@ -49,7 +49,7 @@ The internal switches are Hyper-V **Private** switches. The host does not automa
 Verify Ubuntu guest hostname and IP address (`hostnamectl`, `ip -br a`, `ip route`), then test pfSense management connectivity, configure least-privilege firewall policies and preserve a known-good backup.
 
 ## Evidence and publication policy
-**30 sanitized Phase 1 screenshots are published**, organized into host baseline, Hyper-V networking, pfSense installation and boot verification. Seventeen privacy-reviewed Phase 2 screenshots are included in the [Phase 2 journal](docs/08-phase-02-network-segmentation.md). Browse the [evidence register](docs/04-evidence-register.md#published-screenshot-inventory). Remove emails, account names, device IDs, secrets, tokens, personal paths and unrelated private information before committing images. Never publish ISO files, VHDX disks, credentials or clinical information.
+**30 sanitized Phase 1 screenshots are published**, organized into host baseline, Hyper-V networking, pfSense installation and boot verification. **26 Phase 2 screenshots are published**: 17 firewall and VM setup screenshots in the [Phase 2 journal](docs/08-phase-02-network-segmentation.md), plus nine installation and boot screenshots in the [Ubuntu deployment journal](docs/10-ubuntu-endpoint-deployment.md). Browse the [evidence register](docs/04-evidence-register.md#published-screenshot-inventory). Remove emails, account names, device IDs, secrets, tokens, personal paths and unrelated private information before committing images. Never publish ISO files, VHDX disks, credentials or clinical information.
 
 **Maintainer:** Ayobami Odulaja
 

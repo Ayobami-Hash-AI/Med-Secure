@@ -95,7 +95,7 @@ Captured implementation evidence: static mac zone verification.
 - ATTACK: 10.10.40.0/24, configured gateway 10.10.40.1.
 
 ## Isolation and management considerations
-The CORP/SOC/CLINICAL/ATTACK virtual switches are **Private**. The Windows host cannot directly communicate with guests on these switches without an additional host-facing network path or management VM. Do not expose the pfSense management GUI to WAN. Plan an admin VM attached to CORP or a deliberately controlled management segment.
+The CORP/SOC/CLINICAL/ATTACK virtual switches are **Private**. The Windows host cannot directly communicate with guests on these switches without an additional host-facing network path or management VM. Do not expose the pfSense management GUI to WAN. MED-UBUNTU-01 is now installed on CORP as the management VM; verify its guest network configuration and pfSense HTTPS access before considering the management path operational.
 
 ## Planned firewall policy
 - ATTACK to other internal zones: block by default.
@@ -117,6 +117,10 @@ Reference diagram shared during planning. Its DMZ/management subnets are not the
 
 | Asset | Operating system | Network | Status |
 |---|---|---|---|
-| MED-UBUNTU-01 (renamed from CORP-WS01) | Ubuntu Desktop 24.04.5 LTS (AMD64) | MED-CORP-SW; CORP 10.10.10.0/24 | Installation complete; login and desktop verified; 4096 MB RAM, 2 vCPU; guest hostname/IP not yet checked |
+| MED-UBUNTU-01 (renamed from CORP-WS01) | Ubuntu Desktop 24.04.5 LTS (AMD64) | MED-CORP-SW; CORP 10.10.10.0/24 | Installation complete; login and desktop verified; 4096 MB RAM, 2 vCPU, 40 GB dynamically expanding VHDX; guest hostname/IP not yet checked |
 
 Ubuntu replaces the Windows management client in the architecture map to provide a free desktop for pfSense administration and Linux practice. Installation ISO detached from virtual DVD drive (None selected). Browser access to the CORP pfSense gateway at 10.10.10.1 remains unverified. See [Ubuntu deployment journal](10-ubuntu-endpoint-deployment.md). Windows Server AD/DNS and Windows endpoints remain future enterprise workloads; this decision applies to the management workstation.
+
+### Naming and storage continuity
+
+The current Hyper-V display name is **MED-UBUNTU-01**. Earlier screenshots show CORP-WS01 and the disk filename CORP-WS01.vhdx. A VM display-name change does not establish a renamed VHDX or Linux guest hostname; both retain their last observed state until independently verified.

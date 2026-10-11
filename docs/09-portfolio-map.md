@@ -7,7 +7,7 @@
 | Phase | Deliverable | Current status |
 |---|---|---|
 | 1 — Foundation | Hyper-V switches, FW01 and pfSense installation | Verified |
-| 2 — Segmentation | Interface addresses, management access, firewall policies and flow tests | In progress: addresses verified |
+| 2 — Segmentation | Interface addresses, management access, firewall policies and flow tests | In progress: addresses and MED-UBUNTU-01 installation/desktop verified; connectivity and policies pending |
 | 3 — Enterprise systems | Active Directory, DNS and Windows clients | Planned |
 | 4 — Monitoring | Splunk, Sysmon and endpoint security telemetry | Planned |
 | 5 — Healthcare simulation | Clinical endpoints and restricted access with synthetic data | Planned |
@@ -15,6 +15,18 @@
 | 7 — Recovery and portfolio | Recovery tests, reports and verification evidence | Planned |
 
 The diagram is a project overview, not verification of future workloads. The four internal switches are Private. Ubuntu Desktop 24.04.5 LTS has now been installed and successfully booted to the desktop on the renamed Hyper-V VM **MED-UBUNTU-01**, attached to **MED-CORP-SW**. The installation ISO was detached. Guest hostname, IP assignment, pfSense web access, policy enforcement and recovery remain unverified. See [Ubuntu deployment journal](10-ubuntu-endpoint-deployment.md).
+
+## Current management asset
+
+| Item | Current state |
+|---|---|
+| Hyper-V VM | **MED-UBUNTU-01**; renamed from CORP-WS01 |
+| OS and resources | Ubuntu Desktop 24.04.5 LTS; 4096 MB RAM, 2 vCPU, 40 GB VHDX |
+| Zone | CORP through MED-CORP-SW; gateway 10.10.10.1 |
+| Verified | Installation complete, ISO detached, login and desktop boot |
+| Next | Guest hostname/IP/route, gateway reachability and pfSense HTTPS access |
+
+The diagram marks Ubuntu as installed and Windows Server AD/DNS as planned. Historical setup images keep the former name; no guest hostname or VHDX rename is implied.
 
 ## Supporting documentation
 
