@@ -1,6 +1,6 @@
 # Phase 2 — Network Segmentation
 
-**Status:** Baseline and interface inventory observed; additional interface assignments not yet confirmed.
+**Status:** Five-interface assignment summary reviewed and matches the zone plan; confirmation and applied configuration not yet evidenced.
 
 ## Checkpoint 1 — Baseline review
 The supplied Hyper-V view shows FW01 off and a checkpoint named `FW01 - pfSense 2.8.1 Clean Install`. This confirms a checkpoint entry exists, not that restore has been tested. The next console screenshot shows pfSense CE 2.8.1 completing startup, WAN hn0 receiving 172.28.254.188/20 by DHCP, and CORP/LAN hn4 retaining 10.10.10.1/24. ISO removal was instructed but is not directly proved by these screenshots.
@@ -24,8 +24,13 @@ The NICs are detected even where link state is down. Peer VM connectivity and Hy
 
 ![P2-03: Detected interfaces and WAN assignment prompt](../evidence/phase-02/01-interface-assignment/03-interface-inventory-before-assignment.png)
 
-## Next procedure — Pending user execution
-Enter hn0 for WAN, hn4 for LAN, hn3 for OPT1, hn1 for OPT2, and hn2 for OPT3, pressing Enter after each. Submit an empty response at the next optional-interface prompt to finish the list. Review the summary before confirming. Record the post-assignment console as evidence; then configure zone addresses and test client connectivity and firewall policy. OPT labels can be renamed to zone names in the web interface later.
+## Checkpoint 3 — Assignment summary reviewed
+I entered WAN hn0, LAN hn4, OPT1 hn3, OPT2 hn1 and OPT3 hn2. The proposed assignment summary matches the five-zone plan. The screenshot is paused at the proceed prompt with an unsubmitted `S`; this is not evidence that the configuration has been applied.
+
+![P2-04: Five-interface assignment summary before confirmation](../evidence/phase-02/01-interface-assignment/04-five-interface-assignment-summary.png)
+
+## Next procedure — Confirmation pending
+Clear the unsubmitted `S` with Backspace, type `y`, and press Enter. Wait for configuration processing to finish, then record the resulting console menu and interface list. Verify WAN hn0 and CORP/LAN hn4 still have their expected addressing before setting IP addresses on the OPT interfaces.
 
 ## Remaining validation
 - Confirm saved WAN/LAN/OPT assignments.
@@ -34,7 +39,7 @@ Enter hn0 for WAN, hn4 for LAN, hn3 for OPT1, hn1 for OPT2, and hn2 for OPT3, pr
 - Test allowed and denied inter-zone flows; export a configuration backup and validate recovery.
 
 ## Publication and privacy
-Three screenshots are preserved as flattened PNGs with host labels and the Netgate device identifier masked. Deliberately assigned lab MACs and private lab addressing remain for reproducibility. Each screenshot appears once in this journal; other documentation links here rather than duplicating images.
+Four screenshots have been reviewed for privacy. The first three have host labels and the Netgate device identifier masked; P2-04 contains no visible personal information or sensitive identifiers and required no redaction. Deliberately assigned lab MACs and private lab addressing remain for reproducibility. Each screenshot appears once in this journal; other documentation links here rather than duplicating images.
 
 ## Project documentation summary
-I reviewed my clean-install checkpoint, verified pfSense startup and the existing WAN/CORP addressing, and correlated all five guest interfaces with the static lab MAC plan. I declined VLAN setup because the planned zones use separate virtual adapters. I recorded the remaining interface assignments as pending until confirmed by subsequent console evidence.
+I reviewed my clean-install checkpoint, verified pfSense startup and the existing WAN/CORP addressing, and correlated all five guest interfaces with the static lab MAC plan. I declined VLAN setup because the planned zones use separate virtual adapters. I entered the five interface names and reviewed the proposed summary against the zone plan. I recorded confirmation and applied settings as pending until verified by subsequent console evidence.
