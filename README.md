@@ -1,6 +1,6 @@
 # MedSecure — Segmented Enterprise & Healthcare SOC Home Lab
 
-**Platform:** Microsoft Hyper-V · pfSense CE 2.8.1 · Ubuntu management workstation · planned Windows infrastructure · SOC tooling  
+**Platform:** Microsoft Hyper-V · pfSense CE 2.8.1 · Ubuntu 24.04.5 LTS management workstation · planned Windows infrastructure · SOC tooling  
 **Progress:** Phase 1 firewall installation verified; Phase 2 network segmentation in progress: all five interface assignments verified; all internal gateway addresses verified; management access and policy validation pending.
 
 ## Mission
@@ -21,7 +21,7 @@ Build a realistic, isolated enterprise and simulated clinical security environme
 | CLINICAL | MED-CLINICAL-SW | hn1 | 10.10.30.1/24 — configured |
 | ATTACK | MED-ATTACK-SW | hn2 | 10.10.40.1/24 — configured |
 
-The internal switches are Hyper-V **Private** switches. The host does not automatically have access to them. The selected management VM is CORP-WS01 running Ubuntu Desktop 24.04 LTS on MED-CORP-SW. The ISO download is user-confirmed; VM creation and pre-boot settings are verified; installation and web access remain pending.
+The internal switches are Hyper-V **Private** switches. The host does not automatically have access to them. The CORP management VM, renamed from CORP-WS01 to **MED-UBUNTU-01**, now runs **Ubuntu Desktop 24.04.5 LTS** on MED-CORP-SW. Installation, ISO detachment, login and desktop boot are screenshot-verified; guest hostname, IP configuration and pfSense web access are not yet verified.
 
 ## Completed and verified
 - Assessed GHOST host (Intel N95, 4 cores, ~32 GB RAM, NVMe storage).
@@ -32,6 +32,7 @@ The internal switches are Hyper-V **Private** switches. The host does not automa
 - Diagnosed an ISO attachment/readability boot error and subsequently booted the Netgate installer.
 - Installed pfSense Community Edition 2.8.1 on a 20 GB Hyper-V virtual disk using GPT and ZFS single-disk stripe.
 - Observed successful boot, WAN DHCP address and CORP gateway 10.10.10.1/24.
+- Installed Ubuntu Desktop 24.04.5 LTS on MED-UBUNTU-01; verified login and desktop boot; detached installer ISO.
 
 ## Documentation
 - [Project objectives and success criteria](docs/01-objectives-and-scope.md)
@@ -42,9 +43,10 @@ The internal switches are Hyper-V **Private** switches. The host does not automa
 - [Troubleshooting records](docs/06-troubleshooting.md)
 - [Verification matrix and boot evidence](docs/07-verification.md)
 - [Phase 2 network segmentation journal](docs/08-phase-02-network-segmentation.md)
+- [Ubuntu endpoint deployment journal](docs/10-ubuntu-endpoint-deployment.md)
 
 ## Next milestone
-Establish management access, configure least-privilege firewall policies, validate isolation and connectivity, and preserve a known-good backup.
+Verify Ubuntu guest hostname and IP address (`hostnamectl`, `ip -br a`, `ip route`), then test pfSense management connectivity, configure least-privilege firewall policies and preserve a known-good backup.
 
 ## Evidence and publication policy
 **30 sanitized Phase 1 screenshots are published**, organized into host baseline, Hyper-V networking, pfSense installation and boot verification. Seventeen privacy-reviewed Phase 2 screenshots are included in the [Phase 2 journal](docs/08-phase-02-network-segmentation.md). Browse the [evidence register](docs/04-evidence-register.md#published-screenshot-inventory). Remove emails, account names, device IDs, secrets, tokens, personal paths and unrelated private information before committing images. Never publish ISO files, VHDX disks, credentials or clinical information.
