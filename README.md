@@ -1,7 +1,7 @@
 # MedSecure — Segmented Enterprise & Healthcare SOC Home Lab
 
 **Platform:** Microsoft Hyper-V · pfSense CE 2.8.1 · Windows infrastructure · SOC tooling  
-**Progress:** Phase 1 firewall installation verified; Phase 2 network segmentation in progress: all five interface assignments verified; SOC and CLINICAL addressing verified; ATTACK addressing pending.
+**Progress:** Phase 1 firewall installation verified; Phase 2 network segmentation in progress: all five interface assignments verified; all internal gateway addresses verified; management access and policy validation pending.
 
 ## Mission
 Build a realistic, isolated enterprise and simulated clinical security environment to demonstrate network architecture, segmentation, identity management, endpoint monitoring, SIEM analysis, detection engineering, incident response, vulnerability management and recovery. No real patient data or production assets are used.
@@ -13,7 +13,7 @@ Build a realistic, isolated enterprise and simulated clinical security environme
 | CORP | MED-CORP-SW | hn4 | 10.10.10.1/24 — configured |
 | SOC | MED-SOC-SW | hn3 | 10.10.20.1/24 — configured |
 | CLINICAL | MED-CLINICAL-SW | hn1 | 10.10.30.1/24 — configured |
-| ATTACK | MED-ATTACK-SW | hn2 | 10.10.40.1/24 — planned |
+| ATTACK | MED-ATTACK-SW | hn2 | 10.10.40.1/24 — configured |
 
 The internal switches are Hyper-V **Private** switches. The host does not automatically have access to them. A management VM or a deliberately configured management path will be required.
 
@@ -38,10 +38,10 @@ The internal switches are Hyper-V **Private** switches. The host does not automa
 - [Phase 2 network segmentation journal](docs/08-phase-02-network-segmentation.md)
 
 ## Next milestone
-Configure the remaining internal interface addresses and gateways and least-privilege firewall policies, validate isolation and connectivity, and preserve a known-good backup.
+Establish management access, configure least-privilege firewall policies, validate isolation and connectivity, and preserve a known-good backup.
 
 ## Evidence and publication policy
-**30 sanitized Phase 1 screenshots are published**, organized into host baseline, Hyper-V networking, pfSense installation and boot verification. Nine privacy-reviewed Phase 2 screenshots are included in the [Phase 2 journal](docs/08-phase-02-network-segmentation.md). Browse the [evidence register](docs/04-evidence-register.md#published-screenshot-inventory). Remove emails, account names, device IDs, secrets, tokens, personal paths and unrelated private information before committing images. Never publish ISO files, VHDX disks, credentials or clinical information.
+**30 sanitized Phase 1 screenshots are published**, organized into host baseline, Hyper-V networking, pfSense installation and boot verification. Eleven privacy-reviewed Phase 2 screenshots are included in the [Phase 2 journal](docs/08-phase-02-network-segmentation.md). Browse the [evidence register](docs/04-evidence-register.md#published-screenshot-inventory). Remove emails, account names, device IDs, secrets, tokens, personal paths and unrelated private information before committing images. Never publish ISO files, VHDX disks, credentials or clinical information.
 
 **Maintainer:** Ayobami Odulaja
 
