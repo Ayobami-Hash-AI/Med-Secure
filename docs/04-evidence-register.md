@@ -56,3 +56,7 @@ Recommended image naming: `e01-host-baseline.png`, `e05-static-mac-verification.
 Opaque masks remove the sign-in identity/email, personal user path, controller instance identifier, Netgate device identifier, actual host labels and unrelated home-network addressing. Images are flattened RGB PNGs without original metadata. Deliberately assigned synthetic lab MAC addresses and lab IP ranges remain to support reproducibility. Originals were not committed.
 
 The planning-reference image is explicitly labelled; installer defaults are distinguished from the final configuration. No Phase 2–7 completion is inferred from these images.
+
+## Phase 2 evidence
+
+See the [Phase 2 journal](08-phase-02-network-segmentation.md) for P2-01 checkpoint inventory, P2-02 startup verification and P2-03 interface inventory/assignment prompt. These three screenshots are sanitized; actual optional-interface assignment remains pending.

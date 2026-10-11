@@ -1,7 +1,7 @@
 # MedSecure — Segmented Enterprise & Healthcare SOC Home Lab
 
 **Platform:** Microsoft Hyper-V · pfSense CE 2.8.1 · Windows infrastructure · SOC tooling  
-**Progress:** Phase 1 firewall installation verified; Phase 2 network segmentation pending.
+**Progress:** Phase 1 firewall installation verified; Phase 2 network segmentation in progress: interface inventory verified; assignment pending.
 
 ## Mission
 Build a realistic, isolated enterprise and simulated clinical security environment to demonstrate network architecture, segmentation, identity management, endpoint monitoring, SIEM analysis, detection engineering, incident response, vulnerability management and recovery. No real patient data or production assets are used.
@@ -9,7 +9,7 @@ Build a realistic, isolated enterprise and simulated clinical security environme
 ## Current architecture
 | Zone | Hyper-V switch | pfSense NIC | Address / status |
 |---|---|---|---|
-| WAN | Default Switch | hn0 | DHCP; observed 172.21.139.31/20 |
+| WAN | Default Switch | hn0 | DHCP; latest observed 172.28.254.188/20 |
 | CORP | MED-CORP-SW | hn4 | 10.10.10.1/24 — configured |
 | SOC | MED-SOC-SW | hn3 | 10.10.20.1/24 — planned |
 | CLINICAL | MED-CLINICAL-SW | hn1 | 10.10.30.1/24 — planned |
@@ -35,12 +35,13 @@ The internal switches are Hyper-V **Private** switches. The host does not automa
 - [Implementation roadmap](docs/05-roadmap.md)
 - [Troubleshooting records](docs/06-troubleshooting.md)
 - [Verification matrix and boot evidence](docs/07-verification.md)
+- [Phase 2 network segmentation journal](docs/08-phase-02-network-segmentation.md)
 
 ## Next milestone
 Complete the remaining pfSense interface assignments, configure gateways and least-privilege firewall policies, validate isolation and connectivity, and preserve a known-good backup.
 
 ## Evidence and publication policy
-**30 sanitized Phase 1 screenshots are published**, organized into host baseline, Hyper-V networking, pfSense installation and boot verification. Browse the [evidence register](docs/04-evidence-register.md#published-screenshot-inventory). Remove emails, account names, device IDs, secrets, tokens, personal paths and unrelated private information before committing images. Never publish ISO files, VHDX disks, credentials or clinical information.
+**30 sanitized Phase 1 screenshots are published**, organized into host baseline, Hyper-V networking, pfSense installation and boot verification. Three sanitized Phase 2 baseline screenshots are included in the [Phase 2 journal](docs/08-phase-02-network-segmentation.md). Browse the [evidence register](docs/04-evidence-register.md#published-screenshot-inventory). Remove emails, account names, device IDs, secrets, tokens, personal paths and unrelated private information before committing images. Never publish ISO files, VHDX disks, credentials or clinical information.
 
 **Maintainer:** Ayobami Odulaja
 
