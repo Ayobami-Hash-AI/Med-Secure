@@ -112,12 +112,19 @@ Privacy review: the personal directory prefix and unrelated background are maske
 
 Next steps: finish creation, keep Secure Boot enabled with the Microsoft UEFI Certificate Authority template, set two virtual processors, verify disk capacity, and boot the ISO. These settings and boot remain pending evidence.
 
+## Checkpoint 16 — Created VM and pre-boot settings verified
+I opened Settings for the created CORP-WS01 VM. Secure Boot is enabled with Microsoft UEFI Certificate Authority selected. The settings navigation shows 4096 MB memory, two virtual processors, CORP-WS01.vhdx, Ubuntu desktop media attached to DVD Drive and MED-CORP-SW attached to the Network Adapter. Firmware lists Boot from DVD Drive. Apply is disabled, consistent with no pending edits in this view. TPM and Shielding are unchecked.
+
+![P2-16: CORP-WS01 Secure Boot and pre-boot settings](../evidence/phase-02/03-management-workstation/16-corp-workstation-secure-boot-settings-redacted.webp)
+
+Privacy review: host label and unrelated background were masked. The editor changed dimensions; the key settings were visually compared with the original. Published in lossless WebP. VM creation is now evidenced; disk capacity, successful ISO boot, Ubuntu installation and pfSense browser access remain unverified.
+
 ## Remaining validation
 - Establish a controlled management path; verify client DHCP, DNS and approved egress.
 - Test allowed and denied inter-zone flows; export a configuration backup and validate recovery.
 
 ## Publication and privacy
-The first eleven screenshots document firewall addressing; P2-12 through P2-15 document management-workstation wizard selections. All fifteen screenshots have been reviewed for privacy. The first three have host labels and the Netgate device identifier masked; P2-04 through P2-11 contain no visible personal information or sensitive identifiers and required no redaction. Deliberately assigned lab MACs and private lab addressing remain for reproducibility. Each screenshot appears once in this journal; other documentation links here rather than duplicating images.
+The first eleven screenshots document firewall addressing; P2-12 through P2-16 document management-workstation wizard selections. All sixteen screenshots have been reviewed for privacy. The first three have host labels and the Netgate device identifier masked; P2-04 through P2-11 contain no visible personal information or sensitive identifiers and required no redaction. Deliberately assigned lab MACs and private lab addressing remain for reproducibility. Each screenshot appears once in this journal; other documentation links here rather than duplicating images.
 
 ## Project documentation summary
 I reviewed my clean-install checkpoint, verified pfSense startup and the existing WAN/CORP addressing, and correlated all five guest interfaces with the static lab MAC plan. I declined VLAN setup because the planned zones use separate virtual adapters. I entered the five interface names and reviewed the proposed summary against the zone plan. I subsequently verified all five applied assignments at the console, with WAN and CORP addressing preserved. I configured and saved SOC/OPT1 at 10.10.20.1/24 with DHCP disabled and HTTPS retained. I also saved CLINICAL/OPT2 at 10.10.30.1/24 with DHCP disabled and HTTPS retained. I verified the ATTACK/OPT3 save confirmation at 10.10.40.1/24, completing the internal address plan. Management access and segmentation enforcement remain untested.
