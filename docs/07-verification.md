@@ -22,7 +22,7 @@ Bootup complete; pfSense CE 2.8.1, WAN DHCP and CORP LAN 10.10.10.1/24. Connecti
 ![S30: pfsense initial boot verification](../evidence/phase-01/04-boot-verification/30-pfsense-initial-boot-verification.png)
 
 ## Publication checks
-All 30 sanitized PNGs were decoded locally and all relative image paths checked before publication. The publication process subsequently checks each committed PNG and each Markdown image in GitHub's rendered pages. GitHub rendering checks concern portfolio integrity, not lab connectivity.
+All 30 sanitized PNGs were decoded locally and all relative image paths checked before publication. Post-publication checks on 2026-10-11 confirmed that all 30 committed PNGs match the sanitized local files byte for byte and decode successfully. GitHub's rendered architecture page loaded 10 evidence images, and its build journal loaded the remaining 20; every image reported complete loading and a nonzero natural width. The README milestone image also loaded correctly. All six original documentation files remain present. GitHub rendering checks concern portfolio integrity, not lab connectivity.
 
 ## Next evidence to collect
 Record interface assignments, DHCP client leases, allowed and blocked traffic tests, DNS/egress checks, configuration backup and restore validation. Add new screenshots to their implementation phase only after privacy review.
