@@ -10,6 +10,50 @@
 - Windows virtualization-based security: Running
 - Hyper-V chosen as project hypervisor; VirtualBox also installed on host
 
+## Host baseline evidence
+
+### S01 — Host hardware baseline
+
+Captured implementation evidence: host hardware baseline.
+
+![S01: host hardware baseline](../evidence/phase-01/01-host-baseline/01-host-hardware-baseline.png)
+
+### S02 — Host storage capacity
+
+Captured implementation evidence: host storage capacity.
+
+![S02: host storage capacity](../evidence/phase-01/01-host-baseline/02-host-storage-capacity.png)
+
+### S03 — Firmware virtualization enabled
+
+Captured implementation evidence: firmware virtualization enabled.
+
+![S03: firmware virtualization enabled](../evidence/phase-01/01-host-baseline/03-firmware-virtualization-enabled.png)
+
+### S04 — Host system information
+
+Captured implementation evidence: host system information.
+
+![S04: host system information](../evidence/phase-01/01-host-baseline/04-host-system-information.png)
+
+### S05 — Host network inventory redacted
+
+Captured implementation evidence: host network inventory redacted.
+
+![S05: host network inventory redacted](../evidence/phase-01/01-host-baseline/05-host-network-inventory-redacted.png)
+
+### S06 — Virtual adapter and vbs state
+
+Captured implementation evidence: virtual adapter and vbs state.
+
+![S06: virtual adapter and vbs state](../evidence/phase-01/01-host-baseline/06-virtual-adapter-and-vbs-state.png)
+
+### S07 — Hypervisor security state
+
+Captured implementation evidence: hypervisor security state.
+
+![S07: hypervisor security state](../evidence/phase-01/01-host-baseline/07-hypervisor-security-state.png)
+
 ## FW01 virtual firewall
 - Hypervisor: Hyper-V
 - Guest: pfSense CE 2.8.1 (FreeBSD amd64)
@@ -29,6 +73,20 @@
 
 **Important:** Guest interface numbering did not match intended zone order. MAC correlation is authoritative.
 
+## Network mapping evidence
+
+### S10 — Private zone switches
+
+Captured implementation evidence: private zone switches.
+
+![S10: private zone switches](../evidence/phase-01/02-hyper-v-networking/10-private-zone-switches.png)
+
+### S16 — Static mac zone verification
+
+Captured implementation evidence: static mac zone verification.
+
+![S16: static mac zone verification](../evidence/phase-01/02-hyper-v-networking/16-static-mac-zone-verification.png)
+
 ## IP plan
 - WAN: DHCP on Hyper-V Default Switch; observed 172.21.139.31/20 (lease may change).
 - CORP: 10.10.10.0/24, gateway 10.10.10.1; installer DHCP range intended 10.10.10.100–10.10.10.199 (verify after boot).
@@ -46,3 +104,11 @@ The CORP/SOC/CLINICAL/ATTACK virtual switches are **Private**. The Windows host 
 - All outbound access: explicit egress policy, logging, and test cases.
 
 All non-WAN zone gateways and rules remain planned until configured and tested.
+
+## Planning reference
+
+### S11 — Reference topology not implemented
+
+Reference diagram shared during planning. Its DMZ/management subnets are not the implemented MedSecure architecture; source provenance was not supplied.
+
+![S11: reference topology not implemented](../evidence/phase-01/02-hyper-v-networking/11-reference-topology-not-implemented.png)

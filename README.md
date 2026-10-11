@@ -33,11 +33,19 @@ The internal switches are Hyper-V **Private** switches. The host does not automa
 - [Phase 1 build journal and troubleshooting](docs/03-build-journal.md)
 - [Screenshot evidence register](docs/04-evidence-register.md)
 - [Implementation roadmap](docs/05-roadmap.md)
+- [Troubleshooting records](docs/06-troubleshooting.md)
+- [Verification matrix and boot evidence](docs/07-verification.md)
 
 ## Next milestone
 Complete the remaining pfSense interface assignments, configure gateways and least-privilege firewall policies, validate isolation and connectivity, and preserve a known-good backup.
 
 ## Evidence and publication policy
-Screenshots from the conversation are being catalogued for sanitized publication. **No screenshot should be treated as uploaded until it appears in the repository.** Remove emails, account names, device IDs, secrets, tokens, personal paths and unrelated private information before committing images. Never publish ISO files, VHDX disks, credentials or clinical information.
+**30 sanitized Phase 1 screenshots are published**, organized into host baseline, Hyper-V networking, pfSense installation and boot verification. Browse the [evidence register](docs/04-evidence-register.md#published-screenshot-inventory). Remove emails, account names, device IDs, secrets, tokens, personal paths and unrelated private information before committing images. Never publish ISO files, VHDX disks, credentials or clinical information.
 
 **Maintainer:** Ayobami Odulaja
+
+## Verified milestone
+
+![pfSense CE 2.8.1 initial boot with private identifiers redacted](evidence/phase-01/04-boot-verification/30-pfsense-initial-boot-verification.png)
+
+The console verifies installation and initial WAN/CORP addressing. Later segmentation, client connectivity and SOC tooling remain roadmap milestones.
