@@ -1,6 +1,6 @@
 # Phase 2 — Network Segmentation
 
-**Status:** Five-interface assignment summary reviewed and matches the zone plan; confirmation and applied configuration not yet evidenced.
+**Status:** All five interface assignments are applied and verified at the console. Optional-interface IP configuration remains pending.
 
 ## Checkpoint 1 — Baseline review
 The supplied Hyper-V view shows FW01 off and a checkpoint named `FW01 - pfSense 2.8.1 Clean Install`. This confirms a checkpoint entry exists, not that restore has been tested. The next console screenshot shows pfSense CE 2.8.1 completing startup, WAN hn0 receiving 172.28.254.188/20 by DHCP, and CORP/LAN hn4 retaining 10.10.10.1/24. ISO removal was instructed but is not directly proved by these screenshots.
@@ -29,17 +29,21 @@ I entered WAN hn0, LAN hn4, OPT1 hn3, OPT2 hn1 and OPT3 hn2. The proposed assign
 
 ![P2-04: Five-interface assignment summary before confirmation](../evidence/phase-02/01-interface-assignment/04-five-interface-assignment-summary.png)
 
-## Next procedure — Confirmation pending
-At the blank proceed prompt, type `y` and press Enter. Wait for configuration processing to finish, then record the resulting console menu and interface list. Verify WAN hn0 and CORP/LAN hn4 still have their expected addressing before setting IP addresses on the OPT interfaces.
+## Checkpoint 4 — Applied assignments verified
+After confirming the assignment, I returned to the console menu. The resulting interface list verifies WAN hn0, LAN hn4, OPT1 hn3, OPT2 hn1 and OPT3 hn2. WAN retains DHCP address 172.28.254.188/20 and LAN retains 10.10.10.1/24. OPT1, OPT2 and OPT3 have no displayed IP addresses yet. This verifies interface assignment, not client connectivity or firewall-policy enforcement.
+
+![P2-05: Applied five-interface assignments and preserved WAN/CORP addressing](../evidence/phase-02/01-interface-assignment/05-applied-interface-assignment-verification.png)
+
+## Next procedure — SOC addressing
+Choose console option `2` (Set interface(s) IP address), then identify OPT1/hn3 in the displayed selection list. The planned SOC address is 10.10.20.1/24. Record the next prompts before proceeding; SOC addressing is not yet evidenced. See [Netgate console menu documentation](https://docs.netgate.com/pfsense/en/latest/config/console-menu.html).
 
 ## Remaining validation
-- Confirm saved WAN/LAN/OPT assignments.
 - Configure SOC 10.10.20.1/24, CLINICAL 10.10.30.1/24 and ATTACK 10.10.40.1/24.
 - Establish a controlled management path; verify client DHCP, DNS and approved egress.
 - Test allowed and denied inter-zone flows; export a configuration backup and validate recovery.
 
 ## Publication and privacy
-Four screenshots have been reviewed for privacy. The first three have host labels and the Netgate device identifier masked; P2-04 contains no visible personal information or sensitive identifiers and required no redaction. Deliberately assigned lab MACs and private lab addressing remain for reproducibility. Each screenshot appears once in this journal; other documentation links here rather than duplicating images.
+Five screenshots have been reviewed for privacy. The first three have host labels and the Netgate device identifier masked; P2-04 and P2-05 contain no visible personal information or sensitive identifiers and required no redaction. Deliberately assigned lab MACs and private lab addressing remain for reproducibility. Each screenshot appears once in this journal; other documentation links here rather than duplicating images.
 
 ## Project documentation summary
-I reviewed my clean-install checkpoint, verified pfSense startup and the existing WAN/CORP addressing, and correlated all five guest interfaces with the static lab MAC plan. I declined VLAN setup because the planned zones use separate virtual adapters. I entered the five interface names and reviewed the proposed summary against the zone plan. I recorded confirmation and applied settings as pending until verified by subsequent console evidence.
+I reviewed my clean-install checkpoint, verified pfSense startup and the existing WAN/CORP addressing, and correlated all five guest interfaces with the static lab MAC plan. I declined VLAN setup because the planned zones use separate virtual adapters. I entered the five interface names and reviewed the proposed summary against the zone plan. I subsequently verified all five applied assignments at the console, with WAN and CORP addressing preserved. The three optional interfaces still require IP configuration.

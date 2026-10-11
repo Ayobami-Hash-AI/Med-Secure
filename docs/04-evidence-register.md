@@ -59,4 +59,4 @@ The planning-reference image is explicitly labelled; installer defaults are dist
 
 ## Phase 2 evidence
 
-See the [Phase 2 journal](08-phase-02-network-segmentation.md) for P2-01 checkpoint inventory, P2-02 startup verification and P2-03 interface inventory/assignment prompt. These three screenshots are sanitized; actual optional-interface assignment remains pending.
+See the [Phase 2 journal](08-phase-02-network-segmentation.md) for P2-01 checkpoint inventory, P2-02 startup verification, P2-03 interface inventory, P2-04 proposed assignment summary and P2-05 applied-assignment verification. All five screenshots were reviewed for privacy. The console verifies the five NIC assignments; optional-interface IP addressing and connectivity remain pending.
