@@ -103,12 +103,21 @@ The next step is to select Install an operating system from a bootable image fil
 
 Privacy review: the personal folder path was masked. The image editor changed output dimensions; visible option selections and UI labels were compared with the original. The published copy uses lossless WebP encoding.
 
+## Checkpoint 15 — CORP management workstation summary reviewed
+I reviewed the pre-creation summary: CORP-WS01, Generation 2, 4096 MB memory and MED-CORP-SW. The disk is CORP-WS01.vhdx. Installation from Ubuntu desktop AMD64 media is selected; the visible filename begins ubuntu-24.04.5.1-desktop-amd6 and is truncated. The complete filename and checksum remain unverified. The summary is paused before Finish, so it does not prove VM creation or Ubuntu installation. Disk capacity is outside the visible area and the intended 40 GB remains unverified.
+
+![P2-15: CORP-WS01 pre-creation summary, personal ISO path redacted](../evidence/phase-02/03-management-workstation/15-corp-workstation-wizard-summary-redacted.webp)
+
+Privacy review: the personal directory prefix and unrelated background are masked. The image editor changed output dimensions; name, generation, memory, network and visible filename were compared with the original. The copy uses lossless WebP encoding.
+
+Next steps: finish creation, keep Secure Boot enabled with the Microsoft UEFI Certificate Authority template, set two virtual processors, verify disk capacity, and boot the ISO. These settings and boot remain pending evidence.
+
 ## Remaining validation
 - Establish a controlled management path; verify client DHCP, DNS and approved egress.
 - Test allowed and denied inter-zone flows; export a configuration backup and validate recovery.
 
 ## Publication and privacy
-The first eleven screenshots document firewall addressing; P2-12 through P2-14 document management-workstation wizard selections. All fourteen screenshots have been reviewed for privacy. The first three have host labels and the Netgate device identifier masked; P2-04 through P2-11 contain no visible personal information or sensitive identifiers and required no redaction. Deliberately assigned lab MACs and private lab addressing remain for reproducibility. Each screenshot appears once in this journal; other documentation links here rather than duplicating images.
+The first eleven screenshots document firewall addressing; P2-12 through P2-15 document management-workstation wizard selections. All fifteen screenshots have been reviewed for privacy. The first three have host labels and the Netgate device identifier masked; P2-04 through P2-11 contain no visible personal information or sensitive identifiers and required no redaction. Deliberately assigned lab MACs and private lab addressing remain for reproducibility. Each screenshot appears once in this journal; other documentation links here rather than duplicating images.
 
 ## Project documentation summary
 I reviewed my clean-install checkpoint, verified pfSense startup and the existing WAN/CORP addressing, and correlated all five guest interfaces with the static lab MAC plan. I declined VLAN setup because the planned zones use separate virtual adapters. I entered the five interface names and reviewed the proposed summary against the zone plan. I subsequently verified all five applied assignments at the console, with WAN and CORP addressing preserved. I configured and saved SOC/OPT1 at 10.10.20.1/24 with DHCP disabled and HTTPS retained. I also saved CLINICAL/OPT2 at 10.10.30.1/24 with DHCP disabled and HTTPS retained. I verified the ATTACK/OPT3 save confirmation at 10.10.40.1/24, completing the internal address plan. Management access and segmentation enforcement remain untested.

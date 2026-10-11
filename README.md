@@ -47,7 +47,7 @@ The internal switches are Hyper-V **Private** switches. The host does not automa
 Establish management access, configure least-privilege firewall policies, validate isolation and connectivity, and preserve a known-good backup.
 
 ## Evidence and publication policy
-**30 sanitized Phase 1 screenshots are published**, organized into host baseline, Hyper-V networking, pfSense installation and boot verification. Fourteen privacy-reviewed Phase 2 screenshots are included in the [Phase 2 journal](docs/08-phase-02-network-segmentation.md). Browse the [evidence register](docs/04-evidence-register.md#published-screenshot-inventory). Remove emails, account names, device IDs, secrets, tokens, personal paths and unrelated private information before committing images. Never publish ISO files, VHDX disks, credentials or clinical information.
+**30 sanitized Phase 1 screenshots are published**, organized into host baseline, Hyper-V networking, pfSense installation and boot verification. Fifteen privacy-reviewed Phase 2 screenshots are included in the [Phase 2 journal](docs/08-phase-02-network-segmentation.md). Browse the [evidence register](docs/04-evidence-register.md#published-screenshot-inventory). Remove emails, account names, device IDs, secrets, tokens, personal paths and unrelated private information before committing images. Never publish ISO files, VHDX disks, credentials or clinical information.
 
 **Maintainer:** Ayobami Odulaja
 
