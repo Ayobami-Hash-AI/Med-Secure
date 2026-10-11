@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="790" viewBox="0 0 1200 790">
+<rect width="1200" height="790" fill="#0b1426"/>
+<style>text{font-family:Arial,sans-serif;fill:#edf4ff}.title{font-size:30px;font-weight:bold}.sub{font-size:16px;fill:#a9bddb}.head{font-size:21px;font-weight:bold}.body{font-size:16px}.small{font-size:14px;fill:#a9bddb}.line{stroke:#86a9d4;stroke-width:3;fill:none}.box{fill:#152741;stroke:#3e6087;stroke-width:2}</style>
+<text x="48" y="56" class="title">MedSecure · Enterprise &amp; Healthcare SOC Lab</text>
+<text x="48" y="86" class="sub">Architecture and implementation roadmap · Phase 2 in progress</text>
+<rect x="420" y="112" width="360" height="72" rx="12" class="box"/>
+<text x="600" y="142" text-anchor="middle" class="head">Internet / upstream network</text>
+<text x="600" y="166" text-anchor="middle" class="small">Hyper-V Default Switch → WAN hn0 (DHCP)</text>
+<path d="M600 184V211" class="line"/>
+<rect x="420" y="211" width="360" height="86" rx="12" fill="#153d48" stroke="#48c6ad" stroke-width="2"/>
+<text x="600" y="245" text-anchor="middle" class="head">FW01 · pfSense CE 2.8.1</text>
+<text x="600" y="273" text-anchor="middle" class="body">Verified: installation, NIC mapping, IPv4</text>
+<path d="M600 297V326H168M600 326H1032M168 326V350M456 326V350M744 326V350M1032 326V350" class="line"/>
+<rect x="48" y="350" width="240" height="213" rx="12" class="box"/><text x="68" y="384" class="head">CORP</text><text x="68" y="416" class="body">hn4 · 10.10.10.1/24</text><text x="68" y="444" class="small">MED-CORP-SW · Private</text><text x="68" y="478" class="small">PLANNED WORKLOADS</text><text x="68" y="508" class="body">Windows Server AD / DNS</text><text x="68" y="536" class="body">Windows management client</text><rect x="336" y="350" width="240" height="213" rx="12" class="box"/><text x="356" y="384" class="head">SOC</text><text x="356" y="416" class="body">hn3 · 10.10.20.1/24</text><text x="356" y="444" class="small">MED-SOC-SW · Private</text><text x="356" y="478" class="small">PLANNED WORKLOADS</text><text x="356" y="508" class="body">Splunk / Sysmon telemetry</text><text x="356" y="536" class="body">EDR / Nessus</text><rect x="624" y="350" width="240" height="213" rx="12" class="box"/><text x="644" y="384" class="head">CLINICAL</text><text x="644" y="416" class="body">hn1 · 10.10.30.1/24</text><text x="644" y="444" class="small">MED-CLINICAL-SW · Private</text><text x="644" y="478" class="small">PLANNED WORKLOADS</text><text x="644" y="508" class="body">Simulated clinical endpoints</text><text x="644" y="536" class="body">Synthetic data only</text><rect x="912" y="350" width="240" height="213" rx="12" class="box"/><text x="932" y="384" class="head">ATTACK</text><text x="932" y="416" class="body">hn2 · 10.10.40.1/24</text><text x="932" y="444" class="small">MED-ATTACK-SW · Private</text><text x="932" y="478" class="small">PLANNED WORKLOADS</text><text x="932" y="508" class="body">Kali Linux</text><text x="932" y="536" class="body">Authorized attack simulations</text>
+<text x="48" y="601" class="body">Connections show topology. Traffic permissions require firewall rules and validation.</text>
+<rect x="48" y="625" width="1104" height="111" rx="12" class="box"/>
+<text x="70" y="656" class="head">Security exercise workflow</text>
+<text x="70" y="687" class="body">Authorized test → Collect logs → Investigate → Contain / improve → Retest / document</text>
+<text x="70" y="716" class="small">Next: CORP management access · Then: policies, connectivity, isolation tests and recovery evidence</text>
+<text x="48" y="768" class="small">Verified infrastructure is distinguished from planned workloads. No production assets or real patient data.</text>
+</svg>

@@ -6,6 +6,12 @@
 ## Mission
 Build a realistic, isolated enterprise and simulated clinical security environment to demonstrate network architecture, segmentation, identity management, endpoint monitoring, SIEM analysis, detection engineering, incident response, vulnerability management and recovery. No real patient data or production assets are used.
 
+## Portfolio map
+
+![MedSecure architecture overview and planned workloads](assets/diagrams/medsecure-architecture-map.svg)
+
+[Explore the project map and build sequence](docs/09-portfolio-map.md).
+
 ## Current architecture
 | Zone | Hyper-V switch | pfSense NIC | Address / status |
 |---|---|---|---|
