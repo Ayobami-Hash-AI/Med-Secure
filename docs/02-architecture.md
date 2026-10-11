@@ -113,10 +113,10 @@ Reference diagram shared during planning. Its DMZ/management subnets are not the
 
 ![S11: reference topology not implemented](../evidence/phase-01/02-hyper-v-networking/11-reference-topology-not-implemented.png)
 
-## CORP management workstation — VM created, OS installation pending
+## CORP management workstation — Ubuntu installed and desktop boot verified
 
 | Asset | Operating system | Network | Status |
 |---|---|---|---|
-| CORP-WS01 | Ubuntu Desktop 24.04 LTS (AMD64) | MED-CORP-SW; CORP 10.10.10.0/24 | VM creation evidenced; 4096 MB, 2 vCPU, 40 GB dynamically expanding VHDX, Secure Boot with Microsoft UEFI Certificate Authority; installation pending |
+| MED-UBUNTU-01 (renamed from CORP-WS01) | Ubuntu Desktop 24.04.5 LTS (AMD64) | MED-CORP-SW; CORP 10.10.10.0/24 | Installation complete; login and desktop verified; 4096 MB RAM, 2 vCPU; guest hostname/IP not yet checked |
 
-Ubuntu replaces the Windows management client in the architecture map to provide a free desktop for pfSense administration and Linux practice. Browser access to https://10.10.10.1/ remains unverified. Windows Server AD/DNS and Windows endpoints remain future enterprise workloads; this decision applies to the management workstation.
+Ubuntu replaces the Windows management client in the architecture map to provide a free desktop for pfSense administration and Linux practice. Installation ISO detached from virtual DVD drive (None selected). Browser access to the CORP pfSense gateway at 10.10.10.1 remains unverified. See [Ubuntu deployment journal](10-ubuntu-endpoint-deployment.md). Windows Server AD/DNS and Windows endpoints remain future enterprise workloads; this decision applies to the management workstation.
