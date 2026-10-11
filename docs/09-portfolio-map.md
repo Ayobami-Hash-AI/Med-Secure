@@ -14,7 +14,7 @@
 | 6 — Security exercises | Authorized attack simulations, vulnerability checks and investigations | Planned |
 | 7 — Recovery and portfolio | Recovery tests, reports and verification evidence | Planned |
 
-The diagram is a project overview, not verification of future workloads. The four internal switches are Private. An Ubuntu Desktop 24.04 LTS management client (CORP-WS01) on MED-CORP-SW is the next implementation step. The ISO download is user-confirmed; client connectivity, policy enforcement and recovery remain unverified.
+The diagram is a project overview, not verification of future workloads. The four internal switches are Private. Ubuntu Desktop 24.04.5 LTS has now been installed and successfully booted to the desktop on the renamed Hyper-V VM **MED-UBUNTU-01**, attached to **MED-CORP-SW**. The installation ISO was detached. Guest hostname, IP assignment, pfSense web access, policy enforcement and recovery remain unverified. See [Ubuntu deployment journal](10-ubuntu-endpoint-deployment.md).
 
 ## Supporting documentation
 
@@ -26,4 +26,4 @@ The diagram is a project overview, not verification of future workloads. The fou
 
 ## Project documentation summary
 
-I mapped my verified pfSense foundation and four internal gateway addresses to the enterprise, SOC, clinical and controlled testing zones. I selected Ubuntu Desktop 24.04 LTS for the CORP management workstation, with its ISO downloaded and deployment pending. I distinguished planned workloads from completed infrastructure and documented the sequence from segmentation to monitoring, security exercises and recovery.
+I mapped my verified pfSense foundation and four internal gateway addresses to the enterprise, SOC, clinical and controlled testing zones. I selected Ubuntu Desktop 24.04 LTS for the CORP management workstation, with installation and desktop login verified on MED-UBUNTU-01; network and security verification are pending. I distinguished planned workloads from completed infrastructure and documented the sequence from segmentation to monitoring, security exercises and recovery.
