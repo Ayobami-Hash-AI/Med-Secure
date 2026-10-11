@@ -117,6 +117,6 @@ Reference diagram shared during planning. Its DMZ/management subnets are not the
 
 | Asset | Operating system | Network | Status |
 |---|---|---|---|
-| CORP-WS01 | Ubuntu Desktop 24.04 LTS (AMD64) | MED-CORP-SW; CORP 10.10.10.0/24 | VM creation evidenced; 4096 MB, 2 vCPU, Secure Boot with Microsoft UEFI Certificate Authority; installation pending |
+| CORP-WS01 | Ubuntu Desktop 24.04 LTS (AMD64) | MED-CORP-SW; CORP 10.10.10.0/24 | VM creation evidenced; 4096 MB, 2 vCPU, 40 GB dynamically expanding VHDX, Secure Boot with Microsoft UEFI Certificate Authority; installation pending |
 
 Ubuntu replaces the Windows management client in the architecture map to provide a free desktop for pfSense administration and Linux practice. Browser access to https://10.10.10.1/ remains unverified. Windows Server AD/DNS and Windows endpoints remain future enterprise workloads; this decision applies to the management workstation.

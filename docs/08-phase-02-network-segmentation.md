@@ -119,12 +119,21 @@ I opened Settings for the created CORP-WS01 VM. Secure Boot is enabled with Micr
 
 Privacy review: host label and unrelated background were masked. The editor changed dimensions; the key settings were visually compared with the original. Published in lossless WebP. VM creation is now evidenced; disk capacity, successful ISO boot, Ubuntu installation and pfSense browser access remain unverified.
 
+## Checkpoint 17 — Virtual disk capacity verified
+I inspected CORP-WS01.vhdx. Virtual Hard Disk Properties confirms VHDX format, a dynamically expanding disk, current file size 4 MB and maximum disk size 40 GB. This verifies the intended capacity without allocating the full maximum immediately. The attached disk is on SCSI Controller location 0. Ubuntu boot and installation remain pending.
+
+![P2-17: CORP-WS01 dynamically expanding 40 GB VHDX verification](../evidence/phase-02/03-management-workstation/17-corp-workstation-40gb-vhdx-verification-redacted.webp)
+
+Privacy review: host label and unrelated background are masked. The image editor changed output dimensions; the disk filename, type and capacities were compared with the original. Stored as lossless WebP.
+
+Next: close disk properties and Settings, connect to CORP-WS01, start the VM and select Try or Install Ubuntu at the boot menu.
+
 ## Remaining validation
 - Establish a controlled management path; verify client DHCP, DNS and approved egress.
 - Test allowed and denied inter-zone flows; export a configuration backup and validate recovery.
 
 ## Publication and privacy
-The first eleven screenshots document firewall addressing; P2-12 through P2-16 document management-workstation wizard selections. All sixteen screenshots have been reviewed for privacy. The first three have host labels and the Netgate device identifier masked; P2-04 through P2-11 contain no visible personal information or sensitive identifiers and required no redaction. Deliberately assigned lab MACs and private lab addressing remain for reproducibility. Each screenshot appears once in this journal; other documentation links here rather than duplicating images.
+The first eleven screenshots document firewall addressing; P2-12 through P2-17 document management-workstation wizard selections. All seventeen screenshots have been reviewed for privacy. The first three have host labels and the Netgate device identifier masked; P2-04 through P2-11 contain no visible personal information or sensitive identifiers and required no redaction. Deliberately assigned lab MACs and private lab addressing remain for reproducibility. Each screenshot appears once in this journal; other documentation links here rather than duplicating images.
 
 ## Project documentation summary
 I reviewed my clean-install checkpoint, verified pfSense startup and the existing WAN/CORP addressing, and correlated all five guest interfaces with the static lab MAC plan. I declined VLAN setup because the planned zones use separate virtual adapters. I entered the five interface names and reviewed the proposed summary against the zone plan. I subsequently verified all five applied assignments at the console, with WAN and CORP addressing preserved. I configured and saved SOC/OPT1 at 10.10.20.1/24 with DHCP disabled and HTTPS retained. I also saved CLINICAL/OPT2 at 10.10.30.1/24 with DHCP disabled and HTTPS retained. I verified the ATTACK/OPT3 save confirmation at 10.10.40.1/24, completing the internal address plan. Management access and segmentation enforcement remain untested.
