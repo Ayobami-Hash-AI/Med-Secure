@@ -94,12 +94,21 @@ The next instruction is to set the disk maximum to 40 GB, then attach the downlo
 
 Privacy review: this screenshot contains a lab VM filename and a generic Windows system folder, with no visible personal account, secret or sensitive identifier. No redaction was needed.
 
+## Checkpoint 14 — Installation media selection pending
+I reached Installation Options. The screenshot shows Install an operating system later selected, with the bootable-image option unselected. The disabled image field contains a folder path rather than an ISO filename. This does not verify ISO attachment.
+
+The next step is to select Install an operating system from a bootable image file, browse to the downloaded Ubuntu desktop ISO, then review the wizard summary before creating the VM.
+
+![P2-14: Installation Options before Ubuntu ISO selection, personal path redacted](../evidence/phase-02/03-management-workstation/14-ubuntu-installation-options-before-iso-selection-redacted.webp)
+
+Privacy review: the personal folder path was masked. The image editor changed output dimensions; visible option selections and UI labels were compared with the original. The published copy uses lossless WebP encoding.
+
 ## Remaining validation
 - Establish a controlled management path; verify client DHCP, DNS and approved egress.
 - Test allowed and denied inter-zone flows; export a configuration backup and validate recovery.
 
 ## Publication and privacy
-Eleven screenshots have been reviewed for privacy. The first three have host labels and the Netgate device identifier masked; P2-04 through P2-11 contain no visible personal information or sensitive identifiers and required no redaction. Deliberately assigned lab MACs and private lab addressing remain for reproducibility. Each screenshot appears once in this journal; other documentation links here rather than duplicating images.
+The first eleven screenshots document firewall addressing; P2-12 through P2-14 document management-workstation wizard selections. All fourteen screenshots have been reviewed for privacy. The first three have host labels and the Netgate device identifier masked; P2-04 through P2-11 contain no visible personal information or sensitive identifiers and required no redaction. Deliberately assigned lab MACs and private lab addressing remain for reproducibility. Each screenshot appears once in this journal; other documentation links here rather than duplicating images.
 
 ## Project documentation summary
 I reviewed my clean-install checkpoint, verified pfSense startup and the existing WAN/CORP addressing, and correlated all five guest interfaces with the static lab MAC plan. I declined VLAN setup because the planned zones use separate virtual adapters. I entered the five interface names and reviewed the proposed summary against the zone plan. I subsequently verified all five applied assignments at the console, with WAN and CORP addressing preserved. I configured and saved SOC/OPT1 at 10.10.20.1/24 with DHCP disabled and HTTPS retained. I also saved CLINICAL/OPT2 at 10.10.30.1/24 with DHCP disabled and HTTPS retained. I verified the ATTACK/OPT3 save confirmation at 10.10.40.1/24, completing the internal address plan. Management access and segmentation enforcement remain untested.
