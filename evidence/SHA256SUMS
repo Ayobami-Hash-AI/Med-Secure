@@ -28,3 +28,12 @@ f21d765b2eebfee7fba94919729cbe96dc1e890cd2d5ee3f77d0dde5f606534f  evidence/phase
 e3e6f8287c2bfaf0a291b25619e709d3aa1cb4ebda38a7dcbbc2350451ef26e5  evidence/phase-01/03-pfsense-installation/28-virtual-disk-overwrite-confirmation.png
 b2b78829f1d50075cc3f82bc10ffe1058b2a1d2a65a94a250ba3fa7a61a0e78d  evidence/phase-01/03-pfsense-installation/29-pfsense-version-selection.png
 138f05096e5c323a5731362b17ea1565d2ee8ba6baa3da93778b23228de5780c  evidence/phase-01/04-boot-verification/30-pfsense-initial-boot-verification.png
+0c960516dcf0bf573c5f7211ec358b4b7d567c6b0a8605e061647245b3c77b82  evidence/phase-02/04-ubuntu-deployment/18-ubuntu-network-selection.png
+1d14d130016722ca4d343ce7c2ff770e8d3aef4403ecdd02975c8da4b208f4b3  evidence/phase-02/04-ubuntu-deployment/19-ubuntu-default-applications.png
+8e919bc38d180f01cdf1dd8db51b10c8fd14134efe33f67430b6b3945b43ee13  evidence/phase-02/04-ubuntu-deployment/20-ubuntu-optional-software.png
+01fc008b2f9becaed045006a1b39db0f5ad7ea128dccc287ff73528146afbf3e  evidence/phase-02/04-ubuntu-deployment/21-ubuntu-virtual-disk-installation.png
+8e78c498ca5546c46b1d60709ec922dba52bfef9836c9f38b641788c906314cf  evidence/phase-02/04-ubuntu-deployment/22-ubuntu-account-options.png
+7c955727f8a0e718e13db8ac95b2fd5d38839bcb66b7f9188743f8314f783c48  evidence/phase-02/04-ubuntu-deployment/23-ubuntu-installation-complete.png
+e9dfa8260b869b930ebccf0a143bf09a323e5dd2d719c2b1bfa5bc0791803705  evidence/phase-02/04-ubuntu-deployment/24-ubuntu-iso-detached.png
+e0e341b3f158993664c3c9aa32cb0c5a9b7a78f4028a7ef1aa0154da0423d644  evidence/phase-02/04-ubuntu-deployment/25-med-ubuntu-01-login.png
+968bf8de9b2648ce1d092230a6f0e94326aa656d7726f8354dc42bd9dde8a1f3  evidence/phase-02/04-ubuntu-deployment/26-med-ubuntu-01-desktop.png

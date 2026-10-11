@@ -31,4 +31,43 @@ The screenshots verify installation completion, login-screen availability, deskt
 ### Portfolio summary (first person)
 I installed and booted Ubuntu 24.04.5 LTS in Hyper-V, renamed the VM MED-UBUNTU-01, disconnected installation media, and verified access to the Ubuntu desktop. I am preparing the endpoint for controlled network connectivity, Linux security hardening and integration with the MedSecure SOC monitoring environment.
 
-> Evidence: Screenshots provided in the October 11 project conversation. Image files are not yet committed to this repository.
+## Published screenshot evidence
+
+Nine installation and boot screenshots are committed below. The VM creation, Secure Boot and VHDX setup screenshots are already published under `evidence/phase-02/03-management-workstation/`.
+
+### P2-18 — Installer network selection (connectivity not yet verified)
+
+![Installer network selection (connectivity not yet verified)](../evidence/phase-02/04-ubuntu-deployment/18-ubuntu-network-selection.png)
+
+### P2-19 — Default application selection
+
+![Default application selection](../evidence/phase-02/04-ubuntu-deployment/19-ubuntu-default-applications.png)
+
+### P2-20 — Optional third-party software left unchecked
+
+![Optional third-party software left unchecked](../evidence/phase-02/04-ubuntu-deployment/20-ubuntu-optional-software.png)
+
+### P2-21 — Automatic installation on the VM virtual disk
+
+![Automatic installation on the VM virtual disk](../evidence/phase-02/04-ubuntu-deployment/21-ubuntu-virtual-disk-installation.png)
+
+### P2-22 — Account options before account details were entered
+
+![Account options before account details were entered](../evidence/phase-02/04-ubuntu-deployment/22-ubuntu-account-options.png)
+
+### P2-23 — Ubuntu 24.04.5 LTS installation complete
+
+![Ubuntu 24.04.5 LTS installation complete](../evidence/phase-02/04-ubuntu-deployment/23-ubuntu-installation-complete.png)
+
+### P2-24 — Installation ISO detached: DVD drive set to None
+
+![Installation ISO detached: DVD drive set to None](../evidence/phase-02/04-ubuntu-deployment/24-ubuntu-iso-detached.png)
+
+### P2-25 — MED-UBUNTU-01 login screen
+
+![MED-UBUNTU-01 login screen](../evidence/phase-02/04-ubuntu-deployment/25-med-ubuntu-01-login.png)
+
+### P2-26 — MED-UBUNTU-01 Ubuntu desktop
+
+![MED-UBUNTU-01 Ubuntu desktop](../evidence/phase-02/04-ubuntu-deployment/26-med-ubuntu-01-desktop.png)
+

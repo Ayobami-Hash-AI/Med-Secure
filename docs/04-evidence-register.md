@@ -60,3 +60,21 @@ The planning-reference image is explicitly labelled; installer defaults are dist
 ## Phase 2 evidence
 
 See the [Phase 2 journal](08-phase-02-network-segmentation.md) for P2-01 checkpoint inventory, P2-02 startup verification, P2-03 interface inventory, P2-04 proposed assignment summary P2-05 applied-assignment verification P2-06 IP-configuration interface selection P2-07 SOC IPv4 entry/IPv6 prompt P2-08 SOC saved-address confirmation P2-09 CLINICAL saved-address confirmation P2-10 ATTACK saved-address confirmation and P2-11 consolidated five-interface address verification. All eleven screenshots were reviewed for privacy. The console verifies the five NIC assignments; SOC addressing is saved at 10.10.20.1/24. CLINICAL addressing is saved at 10.10.30.1/24. ATTACK addressing is saved at 10.10.40.1/24. The consolidated console verifies all five mappings and addresses. Client connectivity and segmentation tests remain pending.
+
+## Ubuntu deployment — October 11, 2026
+
+Nine additional screenshots are published under `evidence/phase-02/04-ubuntu-deployment/` and embedded in the [Ubuntu deployment journal](10-ubuntu-endpoint-deployment.md). Existing P2-12–P2-17 VM setup evidence is retained without duplication.
+
+| ID | Evidence |
+|---|---|
+| P2-18 | [Installer network selection (connectivity not yet verified)](../evidence/phase-02/04-ubuntu-deployment/18-ubuntu-network-selection.png) |
+| P2-19 | [Default application selection](../evidence/phase-02/04-ubuntu-deployment/19-ubuntu-default-applications.png) |
+| P2-20 | [Optional third-party software left unchecked](../evidence/phase-02/04-ubuntu-deployment/20-ubuntu-optional-software.png) |
+| P2-21 | [Automatic installation on the VM virtual disk](../evidence/phase-02/04-ubuntu-deployment/21-ubuntu-virtual-disk-installation.png) |
+| P2-22 | [Account options before account details were entered](../evidence/phase-02/04-ubuntu-deployment/22-ubuntu-account-options.png) |
+| P2-23 | [Ubuntu 24.04.5 LTS installation complete](../evidence/phase-02/04-ubuntu-deployment/23-ubuntu-installation-complete.png) |
+| P2-24 | [Installation ISO detached: DVD drive set to None](../evidence/phase-02/04-ubuntu-deployment/24-ubuntu-iso-detached.png) |
+| P2-25 | [MED-UBUNTU-01 login screen](../evidence/phase-02/04-ubuntu-deployment/25-med-ubuntu-01-login.png) |
+| P2-26 | [MED-UBUNTU-01 Ubuntu desktop](../evidence/phase-02/04-ubuntu-deployment/26-med-ubuntu-01-desktop.png) |
+
+Images were visually reviewed and exported as RGB PNGs without original metadata. No passwords are visible; the account-options screenshot contains empty fields. Network selection is an installer state, not proof of connectivity. Guest hostname, IP, routing and pfSense access remain pending.
