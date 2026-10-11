@@ -1,6 +1,6 @@
 # Phase 2 — Network Segmentation
 
-**Status:** All five interface assignments are applied and verified at the console. Optional-interface IP configuration remains pending.
+**Status:** All five interface assignments are applied and verified at the console. SOC/OPT1 IPv4 configuration is saved at 10.10.20.1/24; CLINICAL and ATTACK addressing remain pending.
 
 ## Checkpoint 1 — Baseline review
 The supplied Hyper-V view shows FW01 off and a checkpoint named `FW01 - pfSense 2.8.1 Clean Install`. This confirms a checkpoint entry exists, not that restore has been tested. The next console screenshot shows pfSense CE 2.8.1 completing startup, WAN hn0 receiving 172.28.254.188/20 by DHCP, and CORP/LAN hn4 retaining 10.10.10.1/24. ISO removal was instructed but is not directly proved by these screenshots.
@@ -44,16 +44,21 @@ I selected interface 3 (OPT1/hn3), declined DHCP for its IPv4 address, entered 1
 
 ![P2-07: SOC static IPv4 entry and IPv6 configuration prompt](../evidence/phase-02/02-interface-addressing/07-soc-static-ipv4-entry.png)
 
-## Next procedure — Complete SOC address prompts
-At the DHCP6 question, enter `n`. At the new IPv6 address prompt, press Enter for none, consistent with the current IPv4 lab plan. If prompted to enable a DHCP server on OPT1, enter `n` for now; client addressing will be configured separately. Retain HTTPS if asked to revert the webConfigurator to HTTP. Capture the resulting console interface list to verify 10.10.20.1/24 is applied. See [Netgate console menu documentation](https://docs.netgate.com/pfsense/en/latest/config/console-menu.html).
+## Checkpoint 7 — SOC IPv4 configuration saved
+I declined DHCP6, left the IPv6 address blank, disabled DHCP service on OPT1 and retained HTTPS. pfSense reloaded the filter and routing configuration, then explicitly confirmed that OPT1 was set to 10.10.20.1/24. This verifies the saved interface address; no client connectivity, webConfigurator reachability or segmentation-policy tests have been performed.
+
+![P2-08: SOC IPv4 saved, DHCP disabled and HTTPS retained](../evidence/phase-02/02-interface-addressing/08-soc-ipv4-configuration-saved.png)
+
+## Next procedure — CLINICAL addressing
+Press Enter to return to the menu, choose option `2`, and select interface `4` (OPT2/hn1) after confirming the displayed list. Configure static IPv4 `10.10.30.1/24`, leave the upstream gateway blank, omit IPv6, leave DHCP service disabled for now and retain HTTPS. Capture the confirmation before marking CLINICAL addressing complete.
 
 ## Remaining validation
-- Configure SOC 10.10.20.1/24, CLINICAL 10.10.30.1/24 and ATTACK 10.10.40.1/24.
+- Configure CLINICAL 10.10.30.1/24 and ATTACK 10.10.40.1/24; SOC 10.10.20.1/24 is saved.
 - Establish a controlled management path; verify client DHCP, DNS and approved egress.
 - Test allowed and denied inter-zone flows; export a configuration backup and validate recovery.
 
 ## Publication and privacy
-Seven screenshots have been reviewed for privacy. The first three have host labels and the Netgate device identifier masked; P2-04 through P2-07 contain no visible personal information or sensitive identifiers and required no redaction. Deliberately assigned lab MACs and private lab addressing remain for reproducibility. Each screenshot appears once in this journal; other documentation links here rather than duplicating images.
+Eight screenshots have been reviewed for privacy. The first three have host labels and the Netgate device identifier masked; P2-04 through P2-08 contain no visible personal information or sensitive identifiers and required no redaction. Deliberately assigned lab MACs and private lab addressing remain for reproducibility. Each screenshot appears once in this journal; other documentation links here rather than duplicating images.
 
 ## Project documentation summary
-I reviewed my clean-install checkpoint, verified pfSense startup and the existing WAN/CORP addressing, and correlated all five guest interfaces with the static lab MAC plan. I declined VLAN setup because the planned zones use separate virtual adapters. I entered the five interface names and reviewed the proposed summary against the zone plan. I subsequently verified all five applied assignments at the console, with WAN and CORP addressing preserved. The three optional interfaces still require IP configuration.
+I reviewed my clean-install checkpoint, verified pfSense startup and the existing WAN/CORP addressing, and correlated all five guest interfaces with the static lab MAC plan. I declined VLAN setup because the planned zones use separate virtual adapters. I entered the five interface names and reviewed the proposed summary against the zone plan. I subsequently verified all five applied assignments at the console, with WAN and CORP addressing preserved. I configured and saved SOC/OPT1 at 10.10.20.1/24 with DHCP disabled and HTTPS retained. CLINICAL and ATTACK still require IP configuration.

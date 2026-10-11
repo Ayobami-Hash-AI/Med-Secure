@@ -59,4 +59,4 @@ The planning-reference image is explicitly labelled; installer defaults are dist
 
 ## Phase 2 evidence
 
-See the [Phase 2 journal](08-phase-02-network-segmentation.md) for P2-01 checkpoint inventory, P2-02 startup verification, P2-03 interface inventory, P2-04 proposed assignment summary P2-05 applied-assignment verification P2-06 IP-configuration interface selection and P2-07 SOC IPv4 entry/IPv6 prompt. All seven screenshots were reviewed for privacy. The console verifies the five NIC assignments; optional-interface IP addressing and connectivity remain pending.
+See the [Phase 2 journal](08-phase-02-network-segmentation.md) for P2-01 checkpoint inventory, P2-02 startup verification, P2-03 interface inventory, P2-04 proposed assignment summary P2-05 applied-assignment verification P2-06 IP-configuration interface selection P2-07 SOC IPv4 entry/IPv6 prompt and P2-08 SOC saved-address confirmation. All eight screenshots were reviewed for privacy. The console verifies the five NIC assignments; SOC addressing is saved at 10.10.20.1/24. CLINICAL/ATTACK addressing and client connectivity remain pending.
