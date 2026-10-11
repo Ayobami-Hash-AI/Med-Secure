@@ -25,12 +25,12 @@ The NICs are detected even where link state is down. Peer VM connectivity and Hy
 ![P2-03: Detected interfaces and WAN assignment prompt](../evidence/phase-02/01-interface-assignment/03-interface-inventory-before-assignment.png)
 
 ## Checkpoint 3 — Assignment summary reviewed
-I entered WAN hn0, LAN hn4, OPT1 hn3, OPT2 hn1 and OPT3 hn2. The proposed assignment summary matches the five-zone plan. The screenshot is paused at the proceed prompt with an unsubmitted `S`; this is not evidence that the configuration has been applied.
+I entered WAN hn0, LAN hn4, OPT1 hn3, OPT2 hn1 and OPT3 hn2. The proposed assignment summary matches the five-zone plan. The corrected screenshot is paused at the proceed prompt with a blank input field; this is not evidence that the configuration has been applied. The earlier screenshot was superseded at the same evidence path to avoid duplicate publication.
 
 ![P2-04: Five-interface assignment summary before confirmation](../evidence/phase-02/01-interface-assignment/04-five-interface-assignment-summary.png)
 
 ## Next procedure — Confirmation pending
-Clear the unsubmitted `S` with Backspace, type `y`, and press Enter. Wait for configuration processing to finish, then record the resulting console menu and interface list. Verify WAN hn0 and CORP/LAN hn4 still have their expected addressing before setting IP addresses on the OPT interfaces.
+At the blank proceed prompt, type `y` and press Enter. Wait for configuration processing to finish, then record the resulting console menu and interface list. Verify WAN hn0 and CORP/LAN hn4 still have their expected addressing before setting IP addresses on the OPT interfaces.
 
 ## Remaining validation
 - Confirm saved WAN/LAN/OPT assignments.
