@@ -78,6 +78,13 @@ Create CORP-WS01 using the downloaded Ubuntu Desktop 24.04 LTS AMD64 ISO. Attach
 ## Checkpoint 11 — Management operating system selected (2026-10-11)
 I selected Ubuntu Desktop 24.04 LTS as the free operating system for CORP-WS01, replacing the Windows management-client plan. I confirmed the ISO download in conversation. The exact ISO filename, checksum, VM creation, installation and browser access have not yet been verified. The architecture map and asset plan reflect this selection; no download screenshot was supplied.
 
+## Checkpoint 12 — Management VM memory wizard
+I reached Assign Memory in the New Virtual Machine Wizard. The screen shows 4096 MB startup memory with Dynamic Memory enabled. These are wizard selections, not proof of a completed VM. The name, generation, network and disk will be verified in the summary or final settings.
+
+![P2-12: Management workstation memory selection, host label redacted](../evidence/phase-02/03-management-workstation/12-corp-workstation-memory-selection-redacted.webp)
+
+The published image is a privacy-edited copy with the host label masked and output dimensions changed by the image editor. The visible 4096 MB value and checked Dynamic Memory were compared with the supplied original. It is stored in lossless WebP format.
+
 ## Remaining validation
 - Establish a controlled management path; verify client DHCP, DNS and approved egress.
 - Test allowed and denied inter-zone flows; export a configuration backup and validate recovery.
