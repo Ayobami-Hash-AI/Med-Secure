@@ -14,7 +14,7 @@
 | 6 — Security exercises | Authorized attack simulations, vulnerability checks and investigations | Planned |
 | 7 — Recovery and portfolio | Recovery tests, reports and verification evidence | Planned |
 
-The diagram is a project overview, not verification of future workloads. The four internal switches are Private. A CORP management client is the next implementation step; client connectivity, policy enforcement and recovery remain unverified.
+The diagram is a project overview, not verification of future workloads. The four internal switches are Private. An Ubuntu Desktop 24.04 LTS management client (CORP-WS01) on MED-CORP-SW is the next implementation step. The ISO download is user-confirmed; client connectivity, policy enforcement and recovery remain unverified.
 
 ## Supporting documentation
 
@@ -26,4 +26,4 @@ The diagram is a project overview, not verification of future workloads. The fou
 
 ## Project documentation summary
 
-I mapped my verified pfSense foundation and four internal gateway addresses to the enterprise, SOC, clinical and controlled testing zones. I distinguished planned workloads from completed infrastructure and documented the sequence from segmentation to monitoring, security exercises and recovery.
+I mapped my verified pfSense foundation and four internal gateway addresses to the enterprise, SOC, clinical and controlled testing zones. I selected Ubuntu Desktop 24.04 LTS for the CORP management workstation, with its ISO downloaded and deployment pending. I distinguished planned workloads from completed infrastructure and documented the sequence from segmentation to monitoring, security exercises and recovery.

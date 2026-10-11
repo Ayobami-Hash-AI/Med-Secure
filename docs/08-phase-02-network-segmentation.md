@@ -73,7 +73,10 @@ I returned to the console menu and verified all five mappings and their current 
 ![P2-11: Consolidated five-interface IPv4 verification](../evidence/phase-02/02-interface-addressing/11-all-zone-interface-address-verification.png)
 
 ## Next procedure — CORP management access
-Inspect Hyper-V Manager for an existing usable client VM and available operating-system installation media. Attach the management client to MED-CORP-SW, then validate its address and access to https://10.10.10.1/. Internal switches remain Private, so direct host access is not assumed. No client VM, browser access or policy enforcement is verified by the firewall console.
+Create CORP-WS01 using the downloaded Ubuntu Desktop 24.04 LTS AMD64 ISO. Attach the management client to MED-CORP-SW, then validate its address and access to https://10.10.10.1/. Internal switches remain Private, so direct host access is not assumed. No client VM, browser access or policy enforcement is verified by the firewall console.
+
+## Checkpoint 11 — Management operating system selected (2026-10-11)
+I selected Ubuntu Desktop 24.04 LTS as the free operating system for CORP-WS01, replacing the Windows management-client plan. I confirmed the ISO download in conversation. The exact ISO filename, checksum, VM creation, installation and browser access have not yet been verified. The architecture map and asset plan reflect this selection; no download screenshot was supplied.
 
 ## Remaining validation
 - Establish a controlled management path; verify client DHCP, DNS and approved egress.

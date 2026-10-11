@@ -1,6 +1,6 @@
 # MedSecure — Segmented Enterprise & Healthcare SOC Home Lab
 
-**Platform:** Microsoft Hyper-V · pfSense CE 2.8.1 · Windows infrastructure · SOC tooling  
+**Platform:** Microsoft Hyper-V · pfSense CE 2.8.1 · Ubuntu management workstation · planned Windows infrastructure · SOC tooling  
 **Progress:** Phase 1 firewall installation verified; Phase 2 network segmentation in progress: all five interface assignments verified; all internal gateway addresses verified; management access and policy validation pending.
 
 ## Mission
@@ -21,7 +21,7 @@ Build a realistic, isolated enterprise and simulated clinical security environme
 | CLINICAL | MED-CLINICAL-SW | hn1 | 10.10.30.1/24 — configured |
 | ATTACK | MED-ATTACK-SW | hn2 | 10.10.40.1/24 — configured |
 
-The internal switches are Hyper-V **Private** switches. The host does not automatically have access to them. A management VM or a deliberately configured management path will be required.
+The internal switches are Hyper-V **Private** switches. The host does not automatically have access to them. The selected management VM is CORP-WS01 running Ubuntu Desktop 24.04 LTS on MED-CORP-SW. The ISO download is user-confirmed; VM creation, installation and web access remain pending.
 
 ## Completed and verified
 - Assessed GHOST host (Intel N95, 4 cores, ~32 GB RAM, NVMe storage).

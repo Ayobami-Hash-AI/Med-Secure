@@ -90,9 +90,9 @@ Captured implementation evidence: static mac zone verification.
 ## IP plan
 - WAN: DHCP on Hyper-V Default Switch; observed 172.21.139.31/20 (lease may change).
 - CORP: 10.10.10.0/24, gateway 10.10.10.1; installer DHCP range intended 10.10.10.100–10.10.10.199 (verify after boot).
-- SOC: 10.10.20.0/24, planned gateway 10.10.20.1.
-- CLINICAL: 10.10.30.0/24, planned gateway 10.10.30.1.
-- ATTACK: 10.10.40.0/24, planned gateway 10.10.40.1.
+- SOC: 10.10.20.0/24, configured gateway 10.10.20.1.
+- CLINICAL: 10.10.30.0/24, configured gateway 10.10.30.1.
+- ATTACK: 10.10.40.0/24, configured gateway 10.10.40.1.
 
 ## Isolation and management considerations
 The CORP/SOC/CLINICAL/ATTACK virtual switches are **Private**. The Windows host cannot directly communicate with guests on these switches without an additional host-facing network path or management VM. Do not expose the pfSense management GUI to WAN. Plan an admin VM attached to CORP or a deliberately controlled management segment.
@@ -103,7 +103,7 @@ The CORP/SOC/CLINICAL/ATTACK virtual switches are **Private**. The Windows host 
 - SOC management access: narrowly scoped and logged.
 - All outbound access: explicit egress policy, logging, and test cases.
 
-All non-WAN zone gateways and rules remain planned until configured and tested.
+All four internal gateway addresses are console-verified; firewall policies and inter-zone connectivity remain untested.
 
 ## Planning reference
 
@@ -112,3 +112,11 @@ All non-WAN zone gateways and rules remain planned until configured and tested.
 Reference diagram shared during planning. Its DMZ/management subnets are not the implemented MedSecure architecture; source provenance was not supplied.
 
 ![S11: reference topology not implemented](../evidence/phase-01/02-hyper-v-networking/11-reference-topology-not-implemented.png)
+
+## CORP management workstation — selected, not yet deployed
+
+| Asset | Operating system | Network | Status |
+|---|---|---|---|
+| CORP-WS01 | Ubuntu Desktop 24.04 LTS (AMD64) | MED-CORP-SW; CORP 10.10.10.0/24 | ISO downloaded, as reported by the user; creation and installation pending |
+
+Ubuntu replaces the Windows management client in the architecture map to provide a free desktop for pfSense administration and Linux practice. Browser access to https://10.10.10.1/ remains unverified. Windows Server AD/DNS and Windows endpoints remain future enterprise workloads; this decision applies to the management workstation.
