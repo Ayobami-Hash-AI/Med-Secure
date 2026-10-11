@@ -34,8 +34,13 @@ After confirming the assignment, I returned to the console menu. The resulting i
 
 ![P2-05: Applied five-interface assignments and preserved WAN/CORP addressing](../evidence/phase-02/01-interface-assignment/05-applied-interface-assignment-verification.png)
 
+## Checkpoint 5 — SOC interface selection
+I opened console option 2 and verified the displayed interface numbers: WAN/hn0 is 1, LAN/hn4 is 2, OPT1/hn3 is 3, OPT2/hn1 is 4 and OPT3/hn2 is 5. The screenshot is paused before selecting an interface. No SOC IP address has been entered or verified yet.
+
+![P2-06: Console IP configuration interface selection](../evidence/phase-02/02-interface-addressing/06-soc-interface-selection.png)
+
 ## Next procedure — SOC addressing
-Choose console option `2` (Set interface(s) IP address), then identify OPT1/hn3 in the displayed selection list. The planned SOC address is 10.10.20.1/24. Record the next prompts before proceeding; SOC addressing is not yet evidenced. See [Netgate console menu documentation](https://docs.netgate.com/pfsense/en/latest/config/console-menu.html).
+Select `3` for OPT1/hn3. Use static IPv4 address `10.10.20.1` with prefix `24`; leave the upstream gateway blank for this internal network. Record the ensuing prompts and resulting console before marking SOC addressing complete. DHCP service and client validation remain separate pending steps. See [Netgate console menu documentation](https://docs.netgate.com/pfsense/en/latest/config/console-menu.html).
 
 ## Remaining validation
 - Configure SOC 10.10.20.1/24, CLINICAL 10.10.30.1/24 and ATTACK 10.10.40.1/24.
@@ -43,7 +48,7 @@ Choose console option `2` (Set interface(s) IP address), then identify OPT1/hn3 
 - Test allowed and denied inter-zone flows; export a configuration backup and validate recovery.
 
 ## Publication and privacy
-Five screenshots have been reviewed for privacy. The first three have host labels and the Netgate device identifier masked; P2-04 and P2-05 contain no visible personal information or sensitive identifiers and required no redaction. Deliberately assigned lab MACs and private lab addressing remain for reproducibility. Each screenshot appears once in this journal; other documentation links here rather than duplicating images.
+Six screenshots have been reviewed for privacy. The first three have host labels and the Netgate device identifier masked; P2-04 through P2-06 contain no visible personal information or sensitive identifiers and required no redaction. Deliberately assigned lab MACs and private lab addressing remain for reproducibility. Each screenshot appears once in this journal; other documentation links here rather than duplicating images.
 
 ## Project documentation summary
 I reviewed my clean-install checkpoint, verified pfSense startup and the existing WAN/CORP addressing, and correlated all five guest interfaces with the static lab MAC plan. I declined VLAN setup because the planned zones use separate virtual adapters. I entered the five interface names and reviewed the proposed summary against the zone plan. I subsequently verified all five applied assignments at the console, with WAN and CORP addressing preserved. The three optional interfaces still require IP configuration.
